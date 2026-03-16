@@ -1,12 +1,11 @@
 package MODELO;
 
-
 import java.util.Random;
 
 public class DadoRapido extends Item {
 
     public DadoRapido() {
-        super("Dado Rapido");
+        super("Dado Rapido", 1);
     }
 
     public int tirar() {
