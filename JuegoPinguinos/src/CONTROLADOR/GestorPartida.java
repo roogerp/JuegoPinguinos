@@ -26,10 +26,12 @@ public class GestorPartida {
     }
 
     public int tirarDado(Jugador j, Dado dadoOpcional) {
-    	int resultado = dadoOpcional.tirar(random);
-    	gestorJugador.jugadorSeMueve(j, resultado, this.partida.getTablero());
-    	
-    	return resultado;
+
+        int resultado = dadoOpcional.tirar(random);
+
+        gestorJugador.jugadorSeMueve(j, resultado, this.partida.getTablero());
+
+        return resultado;
     }
 
     public void ejecutarTurnoCompleto() {

@@ -2,13 +2,14 @@ package MODELO;
 
 import java.util.Random;
 
-public class DadoLento extends Item {
+public class DadoLento extends Dado {
 
     public DadoLento() {
         super("Dado Lento", 1);
     }
 
-    public int tirar() {
-        return new Random().nextInt(3) + 1;
+    @Override
+    public int tirar(Random r) {
+        return r.nextInt(3) + 1;
     }
 }

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public class Partida {
 
+	public Partida() {
+	}
+	
     private Tablero tablero;
     private ArrayList<Pinguino> jugadores;
     private int turnoActual;
