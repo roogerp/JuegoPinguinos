@@ -5,7 +5,7 @@ import java.util.Random;
 public class DadoNormal extends Item {
 
     public DadoNormal() {
-        super("Dado Normal");
+        super("Dado Normal", 1);
     }
 
     public int tirar() {

@@ -23,7 +23,6 @@ public class Tablero {
                 case 1: casillas.add(new Agujero(i)); break;
                 case 2: casillas.add(new Trineo(i)); break;
                 case 3: casillas.add(new Interrogante(i)); break;
-                default: casillas.add(new CasillaNormal(i));
             }
         }
     }
