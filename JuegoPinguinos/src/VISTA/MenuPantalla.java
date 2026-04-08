@@ -62,16 +62,13 @@ public class MenuPantalla {
         String username = userField.getText();
         String password = passField.getText();
 
-        System.out.println("Login pressed: " + username + " / " + password);
-
-        // Basic check (just for demo, replace with real login logic)
         if (!username.isEmpty() && !password.isEmpty()) {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/PantallaJuego.fxml"));
+                // ← AQUÍ la ruta del PantallaJuego.fxml
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/VISTA/PantallaJuego.fxml"));
                 Parent pantallaJuegoRoot = loader.load();
                 Scene pantallaJuegoScene = new Scene(pantallaJuegoRoot);
 
-                // Get the current stage using the event
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(pantallaJuegoScene);
                 stage.setTitle("Pantalla de Juego");
