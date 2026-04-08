@@ -3,6 +3,10 @@ package VISTA;
 import java.util.ArrayList;
 import java.util.Random;
 
+import MODELO.Dado;
+import MODELO.Inventario;
+import MODELO.Jugador;
+import MODELO.Pinguino;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,8 +17,8 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
-import controlador.GestorPartida;
-import modelo.*;
+import CONTROLADOR.GestorPartida;
+import MODELO.*;
 
 public class PantallaJuego {
 
