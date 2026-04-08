@@ -8,16 +8,17 @@ import javafx.stage.Stage;
 
 public class main extends Application {
 
-	@Override
-	public void start(Stage primaryStage) throws Exception {
-	    FXMLLoader loader = new FXMLLoader(getClass().getResource("/PantallaMenu.fxml"));
-	    Parent root = loader.load();
+    @Override
+    public void start(Stage stage) throws Exception {
 
-	    Scene scene = new Scene(root);
-	    primaryStage.setScene(scene);
-	    primaryStage.setTitle("El Juego del Pingüino");
-	    primaryStage.show();
-	}
+        Parent root = FXMLLoader.load(getClass().getResource("/PantallaMenu.fxml"));
+
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.setTitle("Juego del Pingüino");
+        stage.show();
+    }
 
     public static void main(String[] args) {
         launch(args);
