@@ -91,18 +91,21 @@ public class PantallaJuego {
 		 */
 
 		// Partida p = new Partida();
-		gestorPartida = new GestorPartida();
-		
-		ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-		Inventario inventario = new Inventario();
-		Dado dado = new Dado("normal", 1, 1, 6);
-		inventario.getLista().add(dado);
-		
-		jugadores.add(new Pinguino("Jugador1", "Azul", 0, inventario));
-
 		gestorPartida.nuevaPartida();
+
+		// Crear pingüino amb el constructor correcte
+		Pinguino pingu = new Pinguino("Jugador1", "Azul");
+
+		// Afegir un dado al inventari usant el mètode correcte
+		pingu.getInventario().añadirDadoRapido(); // o añadirDadoLento()
+
+		// Afegir jugador a la partida amb el mètode correcte
+		gestorPartida.getPartida().añadirJugador(pingu);
 		
-		gestorPartida.getPartida().setJugadores(jugadores);
+		
+		
+		
+		
 
 		// Show board info
 		mostrarTiposDeCasillasEnTablero(gestorPartida.getPartida().getTablero());
@@ -162,8 +165,8 @@ public class PantallaJuego {
 	// Button actions
 	@FXML
 	private void handleDado(ActionEvent event) {
-		Pinguino pingu = (Pinguino) gestorPartida.getPartida().getJugadores().get(0);
-		Dado d = (Dado) pingu.getInv().getLista().get(0);
+		Pinguino pingu = gestorPartida.getPartida().getJugadorActual();
+		Dado d = (Dado) pingu.getInventario().getDados().get(0);
 		
 		System.out.println("Pos pingu previa:" + pingu.getPosicion());
 		

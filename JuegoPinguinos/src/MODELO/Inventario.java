@@ -20,6 +20,11 @@ public class Inventario {
         if (peces < 2) peces++;
     }
 
+    public ArrayList<Item> getDados() {
+        return items;
+    }
+    
+    
     public boolean usarPez() {
         if (peces > 0) {
             peces--;

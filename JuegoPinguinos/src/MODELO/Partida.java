@@ -32,4 +32,11 @@ public class Partida {
     public Tablero getTablero() {
         return tablero;
     }
+    
+    
+    public ArrayList<Pinguino> getJugadores() {
+        return jugadores;
+    }
+    
+    
 }

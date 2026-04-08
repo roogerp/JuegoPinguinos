@@ -36,4 +36,12 @@ public class Tablero {
     public int getTamaño() {
         return casillas.size();
     }
+    
+    // per solucionar que sigui un getCasilla plurarl
+    
+    public ArrayList<Casilla> getCasillas() {
+        return casillas;
+    }
+    
+    
 }
