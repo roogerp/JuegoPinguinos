@@ -80,15 +80,8 @@ public class PantallaJuego {
 
 	@FXML
 	private void initialize() {
-		eventos.setText("¡El juego ha comenzado!");
-
-		// Generate model board
-		/*
-		 * ArrayList<Jugador> jugadores = new ArrayList<>(); jugadores.add(new
-		 * Pinguino(0, "Jugador 1", "Rojo", new Inventario(new ArrayList<>()))); Tablero
-		 * modeloTablero = new Tablero(new ArrayList<>(), jugadores, 0,
-		 * jugadores.get(0)); modeloTablero.generarCasillasAleatorias();
-		 */
+		this.gestorPartida = new GestorPartida();
+	    eventos.setText("¡El juego ha comenzado!");
 
 		// Partida p = new Partida();
 		gestorPartida.nuevaPartida();
@@ -101,7 +94,6 @@ public class PantallaJuego {
 
 		// Afegir jugador a la partida amb el mètode correcte
 		gestorPartida.getPartida().añadirJugador(pingu);
-		
 		
 		
 		
@@ -146,16 +138,15 @@ public class PantallaJuego {
 
 	@FXML
 	private void handleSaveGame() {
-		System.out.println("Saved game.");
-		// TODO
+	    gestorPartida.guardarPartida();
+	    eventos.setText("Partida guardada!");
 	}
 
 	@FXML
 	private void handleLoadGame() {
-		System.out.println("Loaded game.");
-		// TODO
+	    gestorPartida.cargarPartida(1); // el ID de la partida a cargar
+	    eventos.setText("Partida cargada!");
 	}
-
 	@FXML
 	private void handleQuitGame() {
 		System.out.println("Exit...");
@@ -181,29 +172,6 @@ public class PantallaJuego {
 		moveP1(resultado);
 	}
 
-	
-/*	Old simple version
- * private void moveP1(int steps) {
-		p1Position += steps;
-
-		// Bound player
-		if (p1Position >= 50) {
-			p1Position = 49; // 5 columns * 10 rows = 50 cells (index 0 to 49)
-		}
-		
-		if (p1Position < 0) {
-			p1Position = 0;
-		}
-
-		// Check row and column
-		int row = p1Position / COLUMNS;
-		int col = p1Position % COLUMNS;
-
-		// Change P1 property to match row and column
-		GridPane.setRowIndex(P1, row);
-		GridPane.setColumnIndex(P1, col);
-	}*/
-	
 	private void moveP1(int steps) {
 
 	    // Evita spam del botón

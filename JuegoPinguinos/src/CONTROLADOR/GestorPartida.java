@@ -64,12 +64,14 @@ public class GestorPartida {
 
 
     public void guardarPartida() {
-        // para guardar la partida por Gestor BBDD
+        gestorBBDD.conectar();
+        gestorBBDD.guardarBBDD(partida);
+        gestorBBDD.desconectar();
     }
 
-
-
     public void cargarPartida(int id) {
-        // para cargar partida desde BBDD
+        gestorBBDD.conectar();
+        this.partida = gestorBBDD.cargarBBDD(id);
+        gestorBBDD.desconectar();
     }
 }
